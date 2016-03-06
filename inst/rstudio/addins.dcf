@@ -1,0 +1,4 @@
+Name: Assign default values
+Description: Set function arguments in selection to their default values
+Binding: assign_defaults_addin
+Interactive: false
