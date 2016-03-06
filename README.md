@@ -22,3 +22,5 @@ default will be set to that value. Arguments with no default are ignored -- you
 must set those to something sensible yourself. And `...` must be dropped, so 
 have fun with that too! I tried to allow for some sloppiness with the selction, 
 but I'm sure there's room for improvement.
+
+![An animation of the above](internal/assign_defaults.gif)
