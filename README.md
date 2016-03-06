@@ -20,7 +20,7 @@ To use addins:
 These recent addins / Shiny gadgets inspired me to try my hand at this:
 
   * TJ Mahr's [WrapRmd addin](https://github.com/tjmahr/WrapRmd) which wraps R Markdown text *without mangling inline R code*
-  * Aimee Gott's [`tidyshiny`](https://github.com/MangoTheCat/tidyshiny) which puts an [interactive front-end on `tidyr::gather()`](http://www.mango-solutions.com/wp/2016/03/a-gadget-for-tidyr/). I look forward to her treatment of `tidyr::spread()`, which tends to feel like putting toothpaste back in the tube to me.
+  * Aimee Gott's [`tidyshiny`](https://github.com/MangoTheCat/tidyshiny) which puts an [interactive front-end on `tidyr::gather()`](http://www.mango-solutions.com/wp/2016/03/a-gadget-for-tidyr/). This is actually a [Shiny gadget](http://shiny.rstudio.com/articles/gadgets.html) that can be invoked via an addin. I look forward to her treatment of `tidyr::spread()`, which tends to feel like putting toothpaste back in the tube to me.
 
 ### `assign_defaults_addin`
 
@@ -53,3 +53,4 @@ Take with a grain of salt, because I have ~2 entire hours of experience at this 
   * Addins live inside an R package, so take advantage of that, e.g. write tests and some documentation.
   * **Question**: Is the model "one package per addin" or "one addin package per person" or ???
   * **Question**: If your addin operates on a text selection, it feels impossible to develop this function in the usual way. As in, you can't do `devtools::load_all()` then simultaneously have some relevant text selected AND execute the main addin function on it. I had to do "Build & Reload" and run the actual addin from the menu. Am I missing something? This was another reason to shift functionality out of the addin function.
+  * **Question**: My *Addins* menu seems to show all the addins that are ?within packages on my `.libPaths()`?. I bet people will start to put addins in their normal packages, i.e. packages don't exist solely for the purpose of making an addin. Are those really all going to show up in my *Addins* menu all the time? Will there be a way to say "this addin only makes sense when package \<x\> is explicitly loaded"?
