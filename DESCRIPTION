@@ -10,3 +10,4 @@ License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 5.0.1.9000
 Imports: rstudioapi
+Suggests: testthat
