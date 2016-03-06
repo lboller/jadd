@@ -5,6 +5,10 @@ daa <- c(y = "y = \"a\"",
          d = "d = \"something\"",
          z = "z = TRUE",
          r = "r = as.character(z)")
+dav <- list(y = "a",
+            d = "something",
+            z = TRUE,
+            r = "TRUE")
 
 context("assign_defaults")
 
@@ -41,3 +45,16 @@ test_that("default arg selection is prepped sensibly",{
 
 })
 
+test_that("evaluation of prepped character vector", {
+
+  ## SHAME: I couldn't immediately figure out how to write a new expectation
+  ## with the new testthat ... come back to this
+  expect_exists <- function(x) all(x %in% ls(envir = globalenv()))
+
+  expect_warning(rm(list = names(daa)))
+  expect_false(expect_exists(names(daa)))
+
+  eval_global(daa)
+  expect_true(expect_exists(names(daa)))
+  expect_identical(mget(names(dav), envir = globalenv()), dav)
+})

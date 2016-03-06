@@ -19,9 +19,7 @@ assign_defaults_addin <- function() {
   context <- rstudioapi::getActiveDocumentContext()
   text <- context$selection[[1]]$text
   prepped <- prep_text(text)
-  for(i in seq_along(prepped)) {
-    eval(parse(text = prepped[i]), envir = globalenv())
-  }
+  eval_global(prepped)
 }
 
 prep_text <- function(x) {
@@ -41,3 +39,10 @@ count_char <- function(x, char) {
   pos <- unlist(gregexpr(pattern = char, text = x))
   sum(pos > 0)
 }
+
+eval_global <- function(x) {
+  for (i in seq_along(x)) {
+    eval(parse(text = x), envir = globalenv())
+  }
+}
+
