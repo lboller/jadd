@@ -40,9 +40,4 @@ count_char <- function(x, char) {
   sum(pos > 0)
 }
 
-eval_global <- function(x) {
-  for (i in seq_along(x)) {
-    eval(parse(text = x), envir = globalenv())
-  }
-}
-
+eval_global <- function(x) eval(parse(text = x), envir = globalenv())
