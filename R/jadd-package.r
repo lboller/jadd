@@ -6,6 +6,15 @@
 #' @docType package
 NULL
 
+#' Set function arguments to defaults
+#'
+#' Set function arguments in selection to their default values in the global
+#' environment. Objective is to aid function development and debugging. Some
+#' sloppiness in selection in tolerated. Arguments with no defaults are silently
+#' ignored -- it is assumed the developer will set them to something sensible
+#' "by hand". Also \code{...} is dropped.
+#'
+#' @export
 assign_defaults_addin <- function() {
   context <- rstudioapi::getActiveDocumentContext()
   text <- context$selection[[1]]$text
