@@ -1,9 +1,11 @@
 Package: jadd
-Title: What the Package Does (one line, title case)
+Title: Jenny's RStudio Addins
 Version: 0.0.0.9000
 Authors@R: person("Jennifer", "Bryan", role=c("aut", "cre"),
   email = "jenny@stat.ubc.ca")
-Description: What the package does (one paragraph).
+Description: RStudio addins let you execute a bit of R code or a Shiny app
+  through the RStudio IDE, either via the Addins dropdown menu or with a
+  keyboard shortcut. These are mine.
 Depends:
     R (>= 3.2.3)
 License: MIT + file LICENSE
