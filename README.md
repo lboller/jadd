@@ -2,8 +2,9 @@
 
 RStudio addins let you execute a bit of R code or a Shiny app through the 
 RStudio IDE, either via the *Addins* dropdown menu or with a keyboard shortcut. 
-Coupled with functions from the [`rstudioapi`](https://cran.r-project.org/web/packages/rstudioapi/index.html) package, this means you can operate
-on your own R code, which is awesome.
+Coupled with functions from the 
+[`rstudioapi`](https://cran.r-project.org/web/packages/rstudioapi/index.html) 
+package, this means you can operate on your own R code, which is awesome.
 
 RStudio docs on addins (with examples): 
 <https://rstudio.github.io/rstudioaddins/>
@@ -25,15 +26,17 @@ These recent addins / Shiny gadgets inspired me to try my hand at this:
 ### `assign_defaults_addin`
 
 The `assign_defaults_addin` helps you develop and debug a function. Scenario: 
-you're working on a function and need to walk through the body as if 
-it were top-level code. But it is a PITA to set all the arguments to their
-default values. So you just fiddle with the function at arms length, convinced you can spot the problem and fix it this way. Sure you can.
+you're working on a function and need to walk through the body as if it were 
+top-level code. But it is a PITA to set all the arguments to their default 
+values. So you just fiddle with the function at arms length, convinced you can 
+spot the problem and fix it this way. Sure you can.
 
-Select the argument section of your function definition and
-*Addins > Assign default values* will make assignments to the global 
-environment. Arguments that have a default will be set to that value. Arguments 
-with no default are ignored -- you must set those to something sensible 
-yourself. And `...` must be dropped, so have fun with that too! When you're feeling lucky, restart R to clean out global environment and load/test the function properly. I tried to allow for some sloppiness with the selection, but I'm sure there's room for improvement.
+Define your function. Select its name and *Addins > Assign default values* will
+make assignments to the global environment. Arguments that have a default will
+be set to that value. Arguments with no default are ignored -- you must set
+those to something sensible yourself. And `...` must be dropped, so have fun
+with that too! Fix your function. When you're feeling lucky, restart R to clean
+out global environment and load/test the function properly.
 
 To use this addin:
 
@@ -45,7 +48,7 @@ To use this addin:
 
 ### Observations on the development process
 
-Take with a grain of salt, because I have ~2 entire hours of experience at this point.
+Take with a grain of salt, because I have ~~two~~ four entire hours of experience at this point.
 
   * Every addin deserves a demo gif.
   * The addin function shall not be a monster function. Make it as small as possible and put the smarts in other functions.
