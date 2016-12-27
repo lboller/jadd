@@ -8,4 +8,3 @@
 \description{
 Jenny's RStudio addins
 }
-
