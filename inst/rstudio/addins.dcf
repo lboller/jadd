@@ -2,3 +2,8 @@ Name: Assign default values
 Description: Set function arguments in selection to their default values
 Binding: assign_defaults_addin
 Interactive: false
+
+Name: Explore the RStudio API
+Description: Expose information available through the rstudioapi package
+Binding: rstudioapi_addin
+Interactive: false

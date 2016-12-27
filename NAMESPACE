@@ -2,3 +2,4 @@
 
 export(assign_defaults)
 export(assign_defaults_addin)
+export(rstudioapi_addin)
