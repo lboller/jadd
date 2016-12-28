@@ -7,7 +7,7 @@ Description: RStudio addins let you execute a bit of R code or a Shiny app
   through the RStudio IDE, either via the Addins dropdown menu or with a
   keyboard shortcut. These are mine.
 Depends:
-    R (>= 3.2.3)
+    R (>= 3.2.2)
 License: MIT + file LICENSE
 LazyData: true
 RoxygenNote: 5.0.1.9000
