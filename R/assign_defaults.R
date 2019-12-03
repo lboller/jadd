@@ -49,10 +49,8 @@ assign_defaults <- function(fun) {
     if (missing(val)) {
       fun_fmls[[i]] <- "<no assignment made>"
     } else {
-      if (is.language(val)) {
+      if (!is.null(val)) {
         fun_fmls[[i]] <- eval(val, envir = globalenv())
-      } else if (!is.null(val)) {
-        fun_fmls[[i]] <- val
       }
       assign(nm, fun_fmls[[i]], envir = globalenv())
     }
