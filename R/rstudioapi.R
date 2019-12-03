@@ -24,6 +24,6 @@ rstudioapi_addin <- function() {
   lapply(curious_minds, function(f) {
     writeLines(bx(deparse(f)))
     print(eval(f))
-    print(str(eval(f)))
+    print(utils::str(eval(f)))
   })
 }

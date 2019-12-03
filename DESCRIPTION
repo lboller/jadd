@@ -10,6 +10,8 @@ Depends:
     R (>= 3.2.2)
 License: MIT + file LICENSE
 LazyData: true
-RoxygenNote: 5.0.1.9000
-Imports: rstudioapi
+RoxygenNote: 7.0.1
+Imports: 
+    rstudioapi,
+    utils
 Suggests: testthat
