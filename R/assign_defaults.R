@@ -35,7 +35,7 @@ assign_defaults_addin <- function() {
 #' @rdname assign_defaults
 #' @export
 assign_defaults <- function(fun) {
-  fun_name <- deparse(substitute(fun))
+  fun_name <- as.character(substitute(fun))
   fun_fmls <- formals(fun)
 
   msg <- paste0(
