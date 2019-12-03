@@ -35,15 +35,33 @@ assign_defaults_addin <- function() {
 #' @rdname assign_defaults
 #' @export
 assign_defaults <- function(fun) {
-  fmls <- formals(fun)
-  is_naked_name <- vapply(fmls, is.name, logical(1)) # fyi: this catches `...`
-  fmls <- fmls[!is_naked_name]
-  for (i in seq_along(fmls)) {
-    if (is.language(fmls[[i]])) {
-      thing <- eval(fmls[[i]], envir = globalenv())
+  fun_name <- deparse(substitute(fun))
+  fun_fmls <- formals(fun)
+
+  msg <- paste0(
+    "Setting formal arguments of ", fun_name, " to their default values\n"
+  )
+
+  for (i in seq_along(fun_fmls)) {
+    nm <- names(fun_fmls)[[i]]
+    val <- fun_fmls[[i]]
+
+    if (missing(val)) {
+      fun_fmls[[i]] <- "<no assignment made>"
     } else {
-      thing <- fmls[[i]]
+      if (is.language(val)) {
+        fun_fmls[[i]] <- eval(val, envir = globalenv())
+      } else if (!is.null(val)) {
+        fun_fmls[[i]] <- val
+      }
+      assign(nm, fun_fmls[[i]], envir = globalenv())
     }
-    assign(names(fmls)[[i]], thing, envir = globalenv())
   }
+
+  msg <- c(
+    msg,
+    paste0(format(names(fun_fmls), justify = 'right'), ": ", fun_fmls, "\n")
+  )
+  message(msg)
+  invisible()
 }
