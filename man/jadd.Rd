@@ -3,7 +3,6 @@
 \docType{package}
 \name{jadd}
 \alias{jadd}
-\alias{jadd-package}
 \title{jadd}
 \description{
 Jenny's RStudio addins

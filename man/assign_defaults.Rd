@@ -3,7 +3,6 @@
 \name{assign_defaults}
 \alias{assign_defaults}
 \alias{assign_defaults_addin}
-\alias{assign_defaults}
 \title{Set function arguments to defaults}
 \usage{
 assign_defaults_addin()
