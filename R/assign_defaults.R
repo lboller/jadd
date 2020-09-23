@@ -19,8 +19,7 @@
 #' function in an installed package.
 #' }
 #'
-#' @param fun A function object or a character string naming the function. See
-#' \code{\link{formals}} for details.
+#' @param fun The name of a function.
 #' @name assign_defaults
 NULL
 
@@ -28,18 +27,17 @@ NULL
 #' @export
 assign_defaults_addin <- function() {
   context <- rstudioapi::getActiveDocumentContext()
-  text <- context$selection[[1]]$text
+  text <- rstudioapi::primary_selection(context)$text
   assign_defaults(text)
 }
 
 #' @rdname assign_defaults
 #' @export
 assign_defaults <- function(fun) {
-  fun_name <- as.character(substitute(fun))
   fun_fmls <- formals(fun)
 
   msg <- paste0(
-    "Setting formal arguments of `", fun_name, "()` to their default values\n"
+    "Setting formal arguments of `", fun, "()` to their default values\n"
   )
 
   for (i in seq_along(fun_fmls)) {
