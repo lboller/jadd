@@ -37,7 +37,7 @@ assign_defaults <- function(fun) {
   fun_fmls <- formals(fun)
 
   msg <- paste0(
-    "Setting formal arguments of `", fun, "()` to their default values\n"
+    "Setting formal arguments of `", "()` to their default values\n"
   )
 
   for (i in seq_along(fun_fmls)) {
