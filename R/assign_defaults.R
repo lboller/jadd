@@ -36,9 +36,9 @@ assign_defaults_addin <- function() {
 assign_defaults <- function(fun) {
   fun_fmls <- formals(fun)
 
-  msg <- paste0(
-    "Setting formal arguments of `", "()` to their default values\n"
-  )
+  #msg <- paste0(
+  #  "Setting formal arguments of `", "()` to their default values\n"
+  #)
 
   for (i in seq_along(fun_fmls)) {
     nm <- names(fun_fmls)[[i]]
@@ -58,6 +58,6 @@ assign_defaults <- function(fun) {
     msg,
     paste0(format(names(fun_fmls), justify = 'right'), ": ", fun_fmls, "\n")
   )
-  message(msg)
+  #message(msg)
   invisible()
 }
