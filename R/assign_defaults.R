@@ -54,10 +54,10 @@ assign_defaults <- function(fun) {
     }
   }
 
-  msg <- c(
-    msg,
-    paste0(format(names(fun_fmls), justify = 'right'), ": ", fun_fmls, "\n")
-  )
+  #msg <- c(
+  #  msg,
+  #  paste0(format(names(fun_fmls), justify = 'right'), ": ", fun_fmls, "\n")
+  #)
   #message(msg)
   invisible()
 }
